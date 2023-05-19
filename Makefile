@@ -1,9 +1,8 @@
-routine : main.c libhi.so.1.0.0
+routine : main.c libhi.so.1.0
 	gcc -o main main.c -L./ -lhi
 
-libhi.so.1.0.0 : arith.o print.o
-	gcc -shared -o libhi.so.1.0.0 arith.o print.o
-	ln -s libhi.so.1.0.0 libhi.so.1.0
+libhi.so.1.0 : arith.o print.o
+	gcc -shared -Wl,-soname,libhi.so.1 -o libhi.so.1.0 arith.o print.o
 	ln -s libhi.so.1.0 libhi.so.1
 	ln -s libhi.so.1 libhi.so
 
