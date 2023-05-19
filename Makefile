@@ -13,4 +13,4 @@ print.o : print.c
 clean :
 	rm -rf *.o
 	rm -rf lib*
-	rm -rf $(TARGET)
+	rm -rf main
